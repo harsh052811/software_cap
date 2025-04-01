@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 18.x  # or a supported Node.js version
+
+install:
+  - npm ci
+
+script:
+  - ng test --watch=false --browsers=ChromeHeadless --code-coverage
+
+deploy:
+  provider: firebase
+  token: $FIREBASE_TOKEN
+  skip_cleanup: true
+  project: soft-1234   # Replace with your Firebase project ID
+
+
+# Token: 1//05g4_HUJ0XJDpCgYIARAAGAUSNwF-L9Ir1BgSGW4seO3qtx1Z_UCygC6t_mj1QGBK1v8-pcytfwMhvukxZqvCVRt_0KJyvZpN2ik
